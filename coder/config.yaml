@@ -1,0 +1,30 @@
+---
+name: Coder
+version: 2.37.5
+slug: coder
+description: Self-hosted Coder control plane (coderd) for external provisioners
+url: https://github.com/Emyrk/app-coder
+arch:
+  - amd64
+  - aarch64
+ports:
+  3000/tcp: 3000
+ports_description:
+  3000/tcp: Coder HTTP API and dashboard
+webui: http://[HOST]:[PORT:3000]
+backup_exclude:
+  - cache/**
+options:
+  access_url:
+  pg_connection_url:
+  env_vars: []
+schema:
+  access_url: url
+  pg_connection_url: password
+  license: password?
+  admin_email: email?
+  admin_username: str?
+  admin_password: password?
+  env_vars:
+    - name: match(^CODER_[A-Z0-9_]+$)
+      value: str

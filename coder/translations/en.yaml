@@ -1,0 +1,32 @@
+---
+configuration:
+  access_url:
+    name: Access URL
+    description: >-
+      The URL users and external provisioners use to reach Coder, for example
+      https://coder.<tailnet>.ts.net.
+  pg_connection_url:
+    name: PostgreSQL connection URL
+    description: >-
+      For example postgres://coder:<password>@<host>:5432/coder?sslmode=disable.
+  license:
+    name: License
+    description: >-
+      Optional Coder Premium license JWT. Needs the admin email and password
+      below to be added automatically.
+  admin_email:
+    name: Admin email
+    description: >-
+      Optional. Creates the first owner user on a new deployment and is used to
+      add the license.
+  admin_username:
+    name: Admin username
+    description: Optional. Defaults to the part of the admin email before the @.
+  admin_password:
+    name: Admin password
+    description: Optional. Password for the admin user.
+  env_vars:
+    name: Extra environment variables
+    description: >-
+      Additional CODER_* server settings. App-managed settings cannot be
+      overridden.
